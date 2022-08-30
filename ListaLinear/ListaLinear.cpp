@@ -122,7 +122,22 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int valor;
+	cout << "Digite o elemento que queira remover: ";
+	cin >> valor;
+	int pos = posicaoElemento(valor);
+	int novaPos = 0;
 
+	if (pos != -1) {
+		for (int n = pos; n < nElementos; n++) {
+			lista[n] = lista[n + 1];
+		}
+		nElementos--;
+
+	}
+	else {
+		cout << "O elemento nao esta na lista! \n";
+	}
 
 }
 
@@ -152,3 +167,4 @@ int posicaoElemento(int busca)
 	}
 	return posicao;
 }
+
